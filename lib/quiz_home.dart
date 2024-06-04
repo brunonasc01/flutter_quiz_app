@@ -12,22 +12,27 @@ class QuizHome extends StatefulWidget {
 }
 
 class _QuizHomeState extends State<QuizHome> {
-  Widget? activeScreen;
+  var currentScreen = 'start-screen';
 
   @override
   void initState() {
-    activeScreen = StartScreen(switchScreen);
     super.initState();
   }
 
   void switchScreen() {
     setState(() {
-      activeScreen = const QuestionsScreen();
+      currentScreen = 'questions-screen';
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    Widget activeScreen = StartScreen(switchScreen);
+
+    if (currentScreen == 'questions-screen') {
+      activeScreen = const QuestionsScreen();
+    }
+
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.blueAccent, //Define a cor de fundo
