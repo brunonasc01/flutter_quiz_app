@@ -9,7 +9,7 @@ class AnswerButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 8.0),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       child: ElevatedButton(
         onPressed: onTap,
         style: ElevatedButton.styleFrom(
@@ -17,7 +17,7 @@ class AnswerButton extends StatelessWidget {
           backgroundColor: Colors.blue.shade900,
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
-              Radius.circular(5.0),
+              Radius.circular(30.0),
             ),
           ),
         ),
